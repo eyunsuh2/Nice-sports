@@ -63,6 +63,14 @@ void pointingCallback(void*, TimeStamp::inttime timestamp, int input_dx, int inp
     func->applyi(input_dx, input_dy, &output_dx, &output_dy, timestamp);
     xpos += output_dx;
     ypos += output_dy;
+
+    // create transformations
+    Cursors[0] = (xpos - ((SCR_WIDTH) / 2)) / ((SCR_WIDTH) / 2); // Cursor xÁÂÇ¥
+    Cursors[1] = -(ypos - (SCR_HEIGHT / 2)) / ((SCR_WIDTH) / 2); // Cursor yÁÂÇ¥
+
+    // Cursors[0] Ä¿¼­ x ÁÂÇ¥ Cursors[1] Ä¿¼­ y ÁÂÇ¥
+    // Dot[0] Å¸°Ù x ÁÂÇ¥ Dot[1] Å¸°Ù y ÁÂÇ¥
+
 }
 
 
@@ -81,7 +89,7 @@ int main(int argc, char** argv)
 
     // glfw window creation
     // --------------------
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Libpointing", glfwGetPrimaryMonitor(), NULL);
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Libpointing", NULL , NULL);
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -106,7 +114,7 @@ int main(int argc, char** argv)
     }
 
 
-    PointingDevice *input = PointingDevice::create("winhid:/186911001");
+    PointingDevice *input = PointingDevice::create(argv[1]);
 
     for (TimeStamp reftime, now;
         !input->isActive() && now - reftime < 15 * TimeStamp::one_second;
@@ -162,11 +170,6 @@ void render(GLFWwindow* window) {
 
     glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
-
-    // create transformations
-    Cursors[0] = (xpos - ((SCR_WIDTH) / 2)) / ((SCR_WIDTH) / 2);
-    Cursors[1] = -(ypos - (SCR_HEIGHT / 2)) / ((SCR_WIDTH) / 2);
-
     glBindVertexArray(VAO[0]);
     glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
     glBufferData(GL_ARRAY_BUFFER, sizeof(Cursors), Cursors, GL_STATIC_DRAW);
@@ -211,8 +214,8 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 
 void update_dot_vertex(int vIndex, float x, float y)
 {
-    Dots[0] = x;
-    Dots[1] = y;
+    Dots[0] = x; // Å¸°Ù xÁÂÇ¥
+    Dots[1] = y; // Å¸°Ù yÁÂÇ¥
     Dots[2] = 0.0f;
 
     glBindVertexArray(VAO[2]);
