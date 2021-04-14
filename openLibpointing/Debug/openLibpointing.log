@@ -1,0 +1,58 @@
+﻿  openLib.cpp
+C:\Program Files\libpointing\pointing\transferfunctions\TransferFunction.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+pointing.lib(URI.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(URI.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(TimeStamp.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(TimeStamp.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(PointingDevice.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(PointingDevice.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(DisplayDevice.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(DisplayDevice.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(TransferFunction.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(TransferFunction.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(FrequencyEstimator.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(FrequencyEstimator.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(DummyPointingDevice.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(DummyPointingDevice.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(winPointingDevice.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(winPointingDevice.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(DummyDisplayDevice.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(DummyDisplayDevice.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(winDisplayDevice.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(winDisplayDevice.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(SubPixelFunction.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(SubPixelFunction.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(XorgFunction.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(XorgFunction.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(NaiveConstantFunction.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(NaiveConstantFunction.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(ConstantFunction.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(ConstantFunction.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(SigmoidFunction.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(SigmoidFunction.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(Interpolation.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(Interpolation.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(Composition.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(Composition.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(FileUtils.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(FileUtils.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(winSystemPointerAcceleration.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(winSystemPointerAcceleration.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(SystemPointingDevice.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(SystemPointingDevice.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(PointingDeviceManager.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(PointingDeviceManager.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(winDisplayDeviceHelper.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(winDisplayDeviceHelper.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(ConfigDict.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(ConfigDict.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(winPointingDeviceManager.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(winPointingDeviceManager.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(USB.obj) : error LNK2038: '_ITERATOR_DEBUG_LEVEL'에 대해 불일치가 검색되었습니다. '0' 값이 '2'(openLib.obj에 위치) 값과 일치하지 않습니다.
+pointing.lib(USB.obj) : error LNK2038: 'RuntimeLibrary'에 대해 불일치가 검색되었습니다. 'MD_DynamicRelease' 값이 'MDd_DynamicDebug'(openLib.obj에 위치) 값과 일치하지 않습니다.
+openLib.obj : error LNK2019: __imp___invalid_parameter"void __cdecl std::_Adjust_manually_vector_aligned(void * &,unsigned int &)" (?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+openLib.obj : error LNK2019: __imp___calloc_dbg"char * __cdecl std::_Maklocstr<char>(char const *,char *,struct _Cvtvec const &)" (??$_Maklocstr@D@std@@YAPADPBDPADABU_Cvtvec@@@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+openLib.obj : error LNK2019: __imp___CrtDbgReport"void __cdecl std::_Adjust_manually_vector_aligned(void * &,unsigned int &)" (?_Adjust_manually_vector_aligned@std@@YAXAAPAXAAI@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+msvcprtd.lib(locale0_implib.obj) : error LNK2019: __imp___free_dbg"public: static void __cdecl std::_Fac_node::operator delete(void *)" (??3_Fac_node@std@@SAXPAX@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+msvcprtd.lib(locale0_implib.obj) : error LNK2019: __imp___malloc_dbg"public: static void * __cdecl std::_Fac_node::operator new(unsigned int)" (??2_Fac_node@std@@SAPAXI@Z) 함수에서 참조되는 확인할 수 없는 외부 기호
+C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Debug\openLibpointing.exe : fatal error LNK1120: 5개의 확인할 수 없는 외부 참조입니다.
