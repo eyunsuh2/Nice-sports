@@ -46,10 +46,17 @@ float Cursors[] = {
     0.6759f, -0.623f, 0.0f
 };
 float Targets[1083];
+float Target_x = 0, Target_y = 0;
 float finalx1 = 0;
 float finaly1 = 0;
 float r = 0.1f;
 float cursorSize = 0.0025f;
+float width_value = 9;
+float height_value = 16;
+float total_value = width_value + height_value;
+float cursor_width = width_value * cursorSize;
+float cursor_height = height_value * cursorSize;
+
 float accuracy = 0.04;
 int nOfPoints = 1;
 Shader* DotShader, * globalShader;
@@ -79,27 +86,24 @@ void pointingCallback(void*, TimeStamp::inttime timestamp, int input_dx, int inp
     if (start) {
         int dx = output_dx; // input_dx;
         int dy = output_dy; // input_dy;
-
-        outfile << timestamp << "," << dx << "," << dy << "," << sqrt(pow((Targets[0] - Cursors[0]), 2) + pow((Targets[1] - Cursors[1]), 2)) << "," << sqrt(dx * dx + dy * dy) << "\n";
+        outfile << timestamp << "," << dx << "," << dy << "," << sqrt(pow((Targets[0] - Cursors[0]), 2) + pow((Targets[1] - Cursors[1]), 2)) << "," << sqrt(dx * dx + dy * dy) << "," << r << "," << buttons << '\n';
     }
 
     // create transformations
     Cursors[0] = (xpos - ((SCR_WIDTH) / 2)) / ((SCR_WIDTH) / 2); // Cursor xÁÂÇ¥
     Cursors[1] = -(ypos - (SCR_HEIGHT / 2)) / ((SCR_WIDTH) / 2); // Cursor yÁÂÇ¥
     Cursors[3] = Cursors[0];
-    Cursors[4] = Cursors[1] - (0.918f * 16 * cursorSize);
-    Cursors[6] = Cursors[0] + (0.207f * 9 * cursorSize);
-    Cursors[7] = Cursors[1] - (0.7226f * 16 * cursorSize);
-    Cursors[9] = Cursors[0] + (0.328f * 9 * cursorSize);
-    Cursors[10] = Cursors[1] - (1.0f * 16 * cursorSize);
-    Cursors[12] = Cursors[0] + (0.514f * 9 * cursorSize);
-    Cursors[13] = Cursors[1] - (0.9141f * 16 * cursorSize);
-    Cursors[15] = Cursors[0] + (0.395f * 9 * cursorSize);
-    Cursors[16] = Cursors[1] - (0.6387f * 16 * cursorSize);
-    Cursors[18] = Cursors[0] + (0.6759f * 9 * cursorSize);
-    Cursors[19] = Cursors[1] - (0.623f * 16 * cursorSize);
-    // Cursors[0] Ä¿¼­ x ÁÂÇ¥ Cursors[1] Ä¿¼­ y ÁÂÇ¥
-    // Dot[0] Å¸°Ù x ÁÂÇ¥ Dot[1] Å¸°Ù y ÁÂÇ¥
+    Cursors[4] = Cursors[1] - (0.918f * cursor_height);
+    Cursors[6] = Cursors[0] + (0.207f * cursor_width);
+    Cursors[7] = Cursors[1] - (0.7226f * cursor_height);
+    Cursors[9] = Cursors[0] + (0.328f * cursor_width);
+    Cursors[10] = Cursors[1] - (1.0f * cursor_height);
+    Cursors[12] = Cursors[0] + (0.514f * cursor_width);
+    Cursors[13] = Cursors[1] - (0.9141f * cursor_height);
+    Cursors[15] = Cursors[0] + (0.395f * cursor_width);
+    Cursors[16] = Cursors[1] - (0.6387f * cursor_height);
+    Cursors[18] = Cursors[0] + (0.6759f * cursor_width);
+    Cursors[19] = Cursors[1] - (0.623f * cursor_height);
 
 }
 
@@ -109,7 +113,7 @@ int main(int argc, char** argv)
 {
     std::cout << filename;
     outfile.open(filename);
-    outfile << "timestamp,dx,dy,D,speed" << "\n";
+    outfile << "timestamp,dx,dy,D,speed,radius,buttons" << "\n";
     ShowCursor(false);
 
     // glfw: initialize and configure
@@ -186,25 +190,19 @@ int main(int argc, char** argv)
     // Target Vertices ¼³Á¤
     for (int i = 0; i < 361; i++) {
         float angle = i * 3.1415926 / 180;
-        float a1 = r * cos(angle) * 9 / 25;
-        float a2 = r * sin(angle) * 16 / 25;
-
-        if (i == 0) {
-            Targets[0] = 0;
-            Targets[1] = 0;
-            Targets[2] = 0.0f;
-        }
-        Targets[3 * i] = 0 + a1;
-        Targets[3 * i + 1] = 0 + a2;
+        float a1 = r * cos(angle) * width_value / total_value;
+        float a2 = r * sin(angle) * height_value / total_value;
+        Targets[3 * i] = a1;
+        Targets[3 * i + 1] = a2;
         Targets[3 * i + 2] = 0.0f;
     }
 
     for (int i = 0; i < 21; i++) {
         if (i % 3 == 0) {
-            Cursors[i] *= 9 * cursorSize;
+            Cursors[i] *= cursor_width;
         }
         else {
-            Cursors[i] *= 16 * cursorSize;
+            Cursors[i] *= cursor_height;
         }
     }
 
@@ -268,12 +266,10 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
     if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
         nx = Cursors[0]; ny = Cursors[1];
 
-        if (nx <= finalx1 + accuracy and nx >= finalx1 - accuracy) {
-            if (ny <= finaly1 + accuracy and ny >= finaly1 - accuracy) {
-                finalx1 = (((float)rand() / 16383) - 1);
-                finaly1 = (((float)rand() / 16383) - 1);
-                update_dot_vertex(0, finalx1, finaly1);
-            }
+        if (pow(nx-Target_x,2) * pow(total_value / width_value,2) + pow(ny-Target_y, 2) * pow(total_value / height_value,2) <= pow(r,2)) {
+            finalx1 = (((float)rand() / 16383) - 1);
+            finaly1 = (((float)rand() / 16383) - 1);
+            update_dot_vertex(0, finalx1, finaly1);
         }
     }
 
@@ -284,18 +280,27 @@ void update_dot_vertex(int vIndex, float x, float y)
     if (!start) {
         start = true;
     }
+    Target_x = x; Target_y = y;
+
+    int random_number = rand();
+    if (random_number % 4 == 0) {
+        r = 0.1f;
+    }
+    else if (random_number % 4 == 1) {
+        r = 0.133f;
+    }
+    else if (random_number % 4 == 2) {
+        r = 0.166f;
+    }
+    else {
+        r = 0.2f;
+    }
 
     // Target Vertices ¼³Á¤
     for (int i = 0; i < 361; i++) {
         float angle = i * 3.1415926 / 180;
-        float a1 = r * cos(angle) * 9 / 25;
-        float a2 = r * sin(angle) * 16 / 25;
-
-        if (i == 0) {
-            Targets[0] = x;
-            Targets[1] = y;
-            Targets[2] = 0.0f;
-        }
+        float a1 = r * cos(angle) * width_value / total_value;
+        float a2 = r * sin(angle) * height_value / total_value;
         Targets[3 * i] = x + a1;
         Targets[3 * i + 1] = y + a2;
         Targets[3 * i + 2] = 0.0f;
