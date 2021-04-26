@@ -84,8 +84,8 @@ void pointingCallback(void*, TimeStamp::inttime timestamp, int input_dx, int inp
     ypos += output_dy;
 
     if (start) {
-        int dx = output_dx; // input_dx;
-        int dy = output_dy; // input_dy;
+        int dx = input_dx; // 마우스 x속도
+        int dy = input_dy; // 마우스 y속도
         outfile << timestamp << "," << dx << "," << dy << "," << sqrt(pow((Targets[0] - Cursors[0]), 2) + pow((Targets[1] - Cursors[1]), 2)) << "," << sqrt(dx * dx + dy * dy) << "," << r << "," << buttons << '\n';
     }
 
@@ -267,8 +267,8 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
         nx = Cursors[0]; ny = Cursors[1];
 
         if (pow(nx-Target_x,2) * pow(total_value / width_value,2) + pow(ny-Target_y, 2) * pow(total_value / height_value,2) <= pow(r,2)) {
-            finalx1 = (((float)rand() / 16383) - 1);
-            finaly1 = (((float)rand() / 16383) - 1);
+            finalx1 = (((float)rand() / 20479) - 0.8);
+            finaly1 = (((float)rand() / 20479) - 0.8);
             update_dot_vertex(0, finalx1, finaly1);
         }
     }
@@ -277,9 +277,6 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 
 void update_dot_vertex(int vIndex, float x, float y)
 {
-    if (!start) {
-        start = true;
-    }
     Target_x = x; Target_y = y;
 
     int random_number = rand();
@@ -304,6 +301,10 @@ void update_dot_vertex(int vIndex, float x, float y)
         Targets[3 * i] = x + a1;
         Targets[3 * i + 1] = y + a2;
         Targets[3 * i + 2] = 0.0f;
+    }
+
+    if (!start) {
+        start = true;
     }
 
     glBindVertexArray(VAO[2]);
