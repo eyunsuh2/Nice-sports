@@ -2,16 +2,16 @@
 C:\Program Files\libpointing\pointing\transferfunctions\TransferFunction.h(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': 매크로 재정의
 C:\Users\Mandarling\Desktop\class\Software\External Libs\GLFW\include\GLFW\glfw3.h(123): message : 'APIENTRY'의 이전 정의를 참조하십시오.
-C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(65,22): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(98,45): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(99,45): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(197,21): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(216,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(282,48): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(283,48): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(310,21): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(68,22): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(102,45): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(103,45): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(201,21): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(220,30): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(287,48): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(288,48): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\openLibpointing\openLib.cpp(316,21): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   코드를 생성하고 있습니다.
-  0 of 274 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  1 of 282 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.
@@ -22,9 +22,9 @@ pointing.lib(PointingDeviceManager.obj) : warning LNK4099: 'pointing.pdb' PDB를
 pointing.lib(SystemPointingDevice.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(SystemPointingDevice.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 pointing.lib(USB.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(USB.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 pointing.lib(winPointingDevice.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(winPointingDevice.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-pointing.lib(winPointingDeviceManager.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(winPointingDeviceManager.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+pointing.lib(winPointingDeviceManager.obj) : warning LNK4099: '' PDB를 'pointing.lib(winPointingDeviceManager.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 pointing.lib(DisplayDevice.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(DisplayDevice.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-pointing.lib(DummyDisplayDevice.obj) : warning LNK4099: '' PDB를 'pointing.lib(DummyDisplayDevice.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+pointing.lib(DummyDisplayDevice.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(DummyDisplayDevice.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 pointing.lib(winDisplayDevice.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(winDisplayDevice.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 pointing.lib(winDisplayDeviceHelper.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(winDisplayDeviceHelper.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 pointing.lib(Composition.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(Composition.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
@@ -33,8 +33,8 @@ pointing.lib(Interpolation.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointi
 pointing.lib(NaiveConstantFunction.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(NaiveConstantFunction.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 pointing.lib(SigmoidFunction.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(SigmoidFunction.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 pointing.lib(SubPixelFunction.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(SubPixelFunction.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-pointing.lib(TransferFunction.obj) : warning LNK4099: '' PDB를 'pointing.lib(TransferFunction.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-pointing.lib(winSystemPointerAcceleration.obj) : warning LNK4099: '' PDB를 'pointing.lib(winSystemPointerAcceleration.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+pointing.lib(TransferFunction.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(TransferFunction.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+pointing.lib(winSystemPointerAcceleration.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(winSystemPointerAcceleration.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 pointing.lib(ConfigDict.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(ConfigDict.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 pointing.lib(FileUtils.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(FileUtils.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
 pointing.lib(FrequencyEstimator.obj) : warning LNK4099: 'pointing.pdb' PDB를 'pointing.lib(FrequencyEstimator.obj)' 또는 'C:\Users\Mandarling\Desktop\class\Software\projects\openLibpointing\Release\pointing.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.

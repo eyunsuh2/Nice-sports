@@ -58,9 +58,12 @@ float height_value = 16;
 float total_value = width_value + height_value;
 float cursor_width = width_value * cursorSize;
 float cursor_height = height_value * cursorSize;
+int total_click = 0, correct_click = 0;
 
-//std::string mouse_function = "naive:?cdgain=1";     // function setting - constant
-std::string mouse_function = "naive:?cdgain=1&f=acc"; // function setting - acceleration
+//std::string mouse_function = "system:?slider=0&epp=false";     // function setting - constant
+//std::string mouse_function_name = "con";
+std::string mouse_function = "system:?slider=0&epp=true"; // function setting - acceleration
+std::string mouse_function_name = "acc";
 
 float accuracy = 0.04;
 int nOfPoints = 1;
@@ -74,7 +77,7 @@ time_t _tm = time(NULL);
 struct tm* curtime = localtime(&_tm);
 #pragma warning(suppress : 4996)
 std::string filename = std::to_string(curtime->tm_year + 1900) + std::string("_") + std::to_string(curtime->tm_mon + 1) + std::string("_") + std::to_string(curtime->tm_mday)
-+ std::string("_") + std::to_string(curtime->tm_hour) + std::string("_") + std::to_string(curtime->tm_min) + std::string("_") + std::to_string(curtime->tm_sec)
++ std::string("_") + std::to_string(curtime->tm_hour) + std::string("_") + std::to_string(curtime->tm_min) + std::string("_") + std::to_string(curtime->tm_sec) + std::string("_") + mouse_function_name
 + std::string("_output.csv");
 
 
@@ -91,7 +94,8 @@ void pointingCallback(void*, TimeStamp::inttime timestamp, int input_dx, int inp
     if (start) {
         int dx = input_dx; // 마우스 x속도
         int dy = input_dy; // 마우스 y속도
-        outfile << timestamp << "," << dx << "," << dy << "," << sqrt(pow((Targets[0] - Cursors[0]), 2) + pow((Targets[1] - Cursors[1]), 2)) << "," << sqrt(dx * dx + dy * dy) << "," << r << "," << buttons << '\n';
+        outfile << timestamp << "," << dx << "," << dy << "," << sqrt(pow((Targets[0] - Cursors[0]), 2) + pow((Targets[1] - Cursors[1]), 2)) - r << "," << sqrt(dx * dx + dy * dy) << "," << r << "," 
+            << total_click << "," << correct_click << '\n';
     }
 
     // create transformations
@@ -118,7 +122,7 @@ int main(int argc, char** argv)
 {
     std::cout << filename;
     outfile.open(filename);
-    outfile << "timestamp,dx,dy,D,speed,radius,buttons" << "\n";
+    outfile << "timestamp,dx,dy,D,speed,radius,clicks,correct" << "\n";
     ShowCursor(false);
 
     // glfw: initialize and configure
@@ -131,7 +135,7 @@ int main(int argc, char** argv)
 
     // glfw window creation
     // --------------------
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Libpointing", glfwGetPrimaryMonitor(), NULL); //glfwGetPrimaryMonitor(), NULL);
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Libpointing", NULL, NULL); //glfwGetPrimaryMonitor(), NULL);
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
@@ -274,6 +278,7 @@ void render(GLFWwindow* window) {
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
     float nx, ny;
+    total_click++;
 
     if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
         nx = Cursors[0]; ny = Cursors[1];
@@ -282,6 +287,7 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
             finalx1 = (((float)rand() / 20479) - 0.8);
             finaly1 = (((float)rand() / 20479) - 0.8);
             update_dot_vertex(0, finalx1, finaly1);
+            correct_click++;
         }
     }
 
