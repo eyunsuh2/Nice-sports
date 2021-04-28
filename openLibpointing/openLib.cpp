@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <ctime>
 #include <string>
+#include <chrono>
 
 using namespace pointing;
 
@@ -25,7 +26,8 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 
 TransferFunction* func = 0;
 const double err = -2 ^ 31;
-
+std::chrono::system_clock::time_point clock_start;
+std::chrono::minutes duration;
 
 // other functions
 void update_dot_vertex(int vIndex, float x, float y);
@@ -225,6 +227,13 @@ int main(int argc, char** argv)
 
 void render(GLFWwindow* window) {
 
+    if (start) {
+        duration = std::chrono::duration_cast<std::chrono::minutes>(
+            std::chrono::system_clock::now() - clock_start);
+        if (duration.count() == 30) {
+            glfwSetWindowShouldClose(window, true);
+        }
+    }
     glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -305,6 +314,7 @@ void update_dot_vertex(int vIndex, float x, float y)
 
     if (!start) {
         start = true;
+        clock_start = std::chrono::system_clock::now();
     }
 
     glBindVertexArray(VAO[2]);
