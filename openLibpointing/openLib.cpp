@@ -59,6 +59,9 @@ float total_value = width_value + height_value;
 float cursor_width = width_value * cursorSize;
 float cursor_height = height_value * cursorSize;
 
+//std::string mouse_function = "naive:?cdgain=1";     // function setting - constant
+std::string mouse_function = "naive:?cdgain=1&f=acc"; // function setting - acceleration
+
 float accuracy = 0.04;
 int nOfPoints = 1;
 Shader* DotShader, * globalShader;
@@ -166,7 +169,7 @@ int main(int argc, char** argv)
         << "  device is " << (input->isActive() ? "" : "not ") << "active" << std::endl
         << std::endl;
     DisplayDevice* output = DisplayDevice::create(argc > 2 ? argv[2] : "windisplay:/PHLC208?bw=1920&bh=1080&w=598&h=336&hz=60");
-    func = TransferFunction::create(argc > 3 ? argv[3] : "naive:?cdgain=1", input, output); // function setting 
+    func = TransferFunction::create(argc > 3 ? argv[3] : mouse_function, input, output);
     input->setPointingCallback(pointingCallback);
 
 
@@ -230,7 +233,7 @@ void render(GLFWwindow* window) {
     if (start) {
         duration = std::chrono::duration_cast<std::chrono::minutes>(
             std::chrono::system_clock::now() - clock_start);
-        if (duration.count() == 30) {
+        if (duration.count() == 15) {
             glfwSetWindowShouldClose(window, true);
         }
     }
