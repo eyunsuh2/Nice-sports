@@ -28,6 +28,7 @@ TransferFunction* func = 0;
 const double err = -2 ^ 31;
 std::chrono::system_clock::time_point clock_start;
 std::chrono::minutes duration;
+std::chrono::milliseconds csv_timestamp;
 
 // other functions
 void update_dot_vertex(int vIndex, float x, float y);
@@ -60,10 +61,10 @@ float cursor_width = width_value * cursorSize;
 float cursor_height = height_value * cursorSize;
 int total_click = 0, correct_click = 0;
 
-//std::string mouse_function = "system:?slider=0&epp=false";     // function setting - constant
-//std::string mouse_function_name = "con";
-std::string mouse_function = "system:?slider=0&epp=true"; // function setting - acceleration
-std::string mouse_function_name = "acc";
+std::string mouse_function = "system:?slider=0&epp=false";     // function setting - constant
+std::string mouse_function_name = "con";
+//std::string mouse_function = "system:?slider=0&epp=true"; // function setting - acceleration
+//std::string mouse_function_name = "acc";
 
 float accuracy = 0.04;
 int nOfPoints = 1;
@@ -91,10 +92,12 @@ void pointingCallback(void*, TimeStamp::inttime timestamp, int input_dx, int inp
     xpos += output_dx;
     ypos += output_dy;
 
+    csv_timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
+        std::chrono::system_clock::now() - clock_start);
     if (start) {
         int dx = input_dx; // 마우스 x속도
         int dy = input_dy; // 마우스 y속도
-        outfile << timestamp << "," << dx << "," << dy << "," << sqrt(pow((Targets[0] - Cursors[0]), 2) + pow((Targets[1] - Cursors[1]), 2)) - r << "," << sqrt(dx * dx + dy * dy) << "," << r << "," 
+        outfile << csv_timestamp.count() << "," << dx << "," << dy << "," << sqrt(pow((Targets[0] - Cursors[0])*960, 2) + pow((Targets[1] - Cursors[1])*540, 2)) << "," << sqrt(dx * dx + dy * dy) << "," << r*345.6 << "," 
             << total_click << "," << correct_click << '\n';
     }
 
@@ -135,7 +138,7 @@ int main(int argc, char** argv)
 
     // glfw window creation
     // --------------------
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Libpointing", NULL, NULL); //glfwGetPrimaryMonitor(), NULL);
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Libpointing", glfwGetPrimaryMonitor(), NULL); //glfwGetPrimaryMonitor(), NULL);
     if (window == NULL)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
