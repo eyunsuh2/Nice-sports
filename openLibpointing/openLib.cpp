@@ -61,10 +61,10 @@ float cursor_width = width_value * cursorSize;
 float cursor_height = height_value * cursorSize;
 int total_click = 0, correct_click = 0;
 
-std::string mouse_function = "system:?slider=0&epp=false";     // function setting - constant
-std::string mouse_function_name = "con";
-//std::string mouse_function = "system:?slider=0&epp=true"; // function setting - acceleration
-//std::string mouse_function_name = "acc";
+//std::string mouse_function = "system:?slider=0&epp=false";     // function setting - constant
+//std::string mouse_function_name = "con";
+std::string mouse_function = "system:?slider=0&epp=true"; // function setting - acceleration
+std::string mouse_function_name = "acc";
 
 float accuracy = 0.04;
 int nOfPoints = 1;
@@ -95,9 +95,10 @@ void pointingCallback(void*, TimeStamp::inttime timestamp, int input_dx, int inp
     csv_timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(
         std::chrono::system_clock::now() - clock_start);
     if (start) {
-        int dx = input_dx; // 마우스 x속도
-        int dy = input_dy; // 마우스 y속도
-        outfile << csv_timestamp.count() << "," << dx << "," << dy << "," << sqrt(pow((Targets[0] - Cursors[0])*960, 2) + pow((Targets[1] - Cursors[1])*540, 2)) << "," << sqrt(dx * dx + dy * dy) << "," << r*345.6 << "," 
+        outfile << csv_timestamp.count() << "," << input_dx << "," << input_dy << "," 
+            << output_dx << "," << output_dy << ","
+            << sqrt(pow((Targets[0] - Cursors[0])*960, 2) + pow((Targets[1] - Cursors[1])*540, 2)) << "," << sqrt(input_dx * input_dx + input_dy * input_dy) << "," 
+            << sqrt(output_dx * output_dx + output_dy * output_dy) << "," << r*345.6 << ","
             << total_click << "," << correct_click << '\n';
     }
 
@@ -125,7 +126,7 @@ int main(int argc, char** argv)
 {
     std::cout << filename;
     outfile.open(filename);
-    outfile << "timestamp,dx,dy,D,speed,radius,clicks,correct" << "\n";
+    outfile << "timestamp,input_dx,input_dy,output_dx,output_dy,D,mouse_speed,cursor_speed,radius,clicks,correct" << "\n";
     ShowCursor(false);
 
     // glfw: initialize and configure
