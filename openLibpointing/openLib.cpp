@@ -241,7 +241,10 @@ void render(GLFWwindow* window) {
     if (start) {
         duration = std::chrono::duration_cast<std::chrono::minutes>(
             std::chrono::system_clock::now() - clock_start);
-        if (duration.count() == 15) {
+        // if (duration.count() == 15) {
+        //    glfwSetWindowShouldClose(window, true);
+        // }
+        if (duration.count() == 5) {
             glfwSetWindowShouldClose(window, true);
         }
     }
